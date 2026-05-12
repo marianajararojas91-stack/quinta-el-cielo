@@ -1,2 +1,74 @@
-/* Import Tailwind */
+/* Importar Tailwind CSS */
 @import "tailwindcss";
+
+/* Variables CSS para animaciones GSAP */
+:root {
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* Scroll suave en toda la página */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Prevenir layout shift durante animaciones */
+section {
+  will-change: auto;
+}
+
+/* Asegurar que las secciones sean visibles por defecto */
+section:not(#hero) {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Transiciones suaves en links y botones */
+a, button {
+  transition: all 0.3s var(--ease-smooth);
+}
+
+/* Image loading optimization */
+img {
+  will-change: transform, opacity;
+}
+
+/* Custom scrollbar for better UX */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f0f0f0;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2d5016;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #1f3810;
+}
+
+/* Ripple effect styling */
+.ripple-effect {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.6);
+  pointer-events: none;
+  transform: scale(0);
+}
+
+/* Magnetic button cursor */
+[data-magnetic] {
+  cursor: pointer;
+  display: inline-block;
+}
+
+/* Smooth performance for animated elements */
+[data-magnetic],
+[data-counter] {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}

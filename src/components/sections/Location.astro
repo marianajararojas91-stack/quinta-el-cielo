@@ -1,22 +1,24 @@
 ---
-import { MapPin, Clock, Navigation } from '@lucide/astro';
+import { MapPin, Clock, Navigation, ArrowRight } from '@lucide/astro';
 ---
 
-<section id="ubicacion" class="py-20 md:py-32 bg-gradient-to-b from-bone to-white">
+<section id="ubicacion" class="py-20 md:py-32 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <!-- Header -->
-        <div class="text-center mb-16">
-            <span class="text-sm font-semibold text-sunset uppercase tracking-wider">Ubicación</span>
-            <h2 class="mt-4 text-4xl md:text-5xl font-bold text-night">
-                Fácil acceso desde Monterrey
+        <!-- Header Minimalista -->
+        <div class="max-w-3xl mb-20">
+            <h2 class="text-5xl md:text-6xl font-bold text-night mb-6 leading-tight">
+                Cómo llegar
             </h2>
+            <p class="text-xl text-night/60">
+                A 6 km de Los Lirios, Ejido Rancho Nuevo, Arteaga, Coahuila
+            </p>
         </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <!-- Map -->
-            <div class="aspect-video rounded-2xl overflow-hidden shadow-xl">
+        <!-- Mapa Full Width Hero -->
+        <div class="mb-8" style="height: 70vh; min-height: 500px; max-height: 700px;">
+            <div class="h-full rounded-3xl overflow-hidden">
                 <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3595.123!2d-100.6137!3d25.5842!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDM1JzAzLjEiTiAxMDDCsDM2JzQ5LjMiVw!5e0!3m2!1sen!2smx!4v1234567890"
+                    src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3595.123!2d-100.53123336184542!3d25.385850324319865!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjXCsDIzJzA5LjEiTiAxMDDCsDMxJzUyLjQiVw!5e0!3m2!1ses!2smx!4v1234567890"
                     width="100%"
                     height="100%"
                     style="border:0;"
@@ -25,50 +27,117 @@ import { MapPin, Clock, Navigation } from '@lucide/astro';
                     referrerpolicy="no-referrer-when-downgrade"
                 ></iframe>
             </div>
+        </div>
 
-            <!-- Info -->
-            <div class="space-y-6">
-                <div class="flex gap-4">
-                    <div class="flex-shrink-0 w-12 h-12 bg-forest/10 rounded-lg flex items-center justify-center">
-                        <MapPin class="w-6 h-6 text-forest" />
+        <!-- Link debajo del mapa -->
+        <div class="mb-20">
+            <a
+                href="https://www.google.com/maps?q=25.385850324319865,-100.53123336184542"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 text-night/60 hover:text-night transition-colors text-sm group"
+            >
+                <Navigation class="w-4 h-4" />
+                <span class="border-b border-night/20 group-hover:border-night transition-colors">Ver en Google Maps</span>
+                <ArrowRight class="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity -ml-1" />
+            </a>
+        </div>
+
+        <!-- Info Grid Minimalista -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-x-12 gap-y-16 mb-20">
+            <!-- Item 1 -->
+            <div>
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-10 h-10 rounded-full bg-night flex items-center justify-center">
+                        <MapPin class="w-5 h-5 text-white" />
                     </div>
-                    <div>
-                        <h3 class="font-semibold text-night mb-1">Ubicación</h3>
-                        <p class="text-night/70">Sierra de Arteaga, Coahuila</p>
-                        <p class="text-sm text-night/50">A 3,550 metros sobre el nivel del mar</p>
+                    <h3 class="text-lg font-semibold text-night">Ubicación</h3>
+                </div>
+                <div class="space-y-2 text-night/60">
+                    <p>Ejido Rancho Nuevo</p>
+                    <p>Arteaga, Coahuila</p>
+                    <p class="text-sm pt-2 border-t border-night/10">3,550 m sobre el nivel del mar</p>
+                </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div>
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-10 h-10 rounded-full bg-night flex items-center justify-center">
+                        <Clock class="w-5 h-5 text-white" />
+                    </div>
+                    <h3 class="text-lg font-semibold text-night">Desde Monterrey</h3>
+                </div>
+                <div class="space-y-2 text-night/60">
+                    <p>80 minutos en auto</p>
+                    <p>90 kilómetros</p>
+                    <p class="text-sm pt-2 border-t border-night/10">Carretera en buen estado</p>
+                </div>
+            </div>
+
+            <!-- Item 3 -->
+            <div>
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-10 h-10 rounded-full bg-night flex items-center justify-center">
+                        <Navigation class="w-5 h-5 text-white" />
+                    </div>
+                    <h3 class="text-lg font-semibold text-night">Coordenadas GPS</h3>
+                </div>
+                <div class="space-y-2 text-night/60">
+                    <p class="font-mono text-sm">25.385850</p>
+                    <p class="font-mono text-sm">-100.531233</p>
+                    <p class="text-sm pt-2 border-t border-night/10">Copia y pega en tu GPS</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Indicaciones Minimalistas -->
+        <div class="border-t border-night/10 pt-20">
+            <h3 class="text-3xl font-bold text-night mb-12">Indicaciones desde Monterrey</h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-8">
+                <div class="space-y-6">
+                    <div class="flex gap-6">
+                        <div class="flex-shrink-0 w-8 h-8 rounded-full bg-night text-white flex items-center justify-center text-sm font-bold">
+                            1
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-night mb-2">Carretera a Saltillo</h4>
+                            <p class="text-night/60">Toma la Carretera 40 con dirección a Saltillo</p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-6">
+                        <div class="flex-shrink-0 w-8 h-8 rounded-full bg-night text-white flex items-center justify-center text-sm font-bold">
+                            2
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-night mb-2">Desviación a Arteaga</h4>
+                            <p class="text-night/60">Busca las señalizaciones hacia Arteaga</p>
+                        </div>
                     </div>
                 </div>
 
-                <div class="flex gap-4">
-                    <div class="flex-shrink-0 w-12 h-12 bg-sunset/10 rounded-lg flex items-center justify-center">
-                        <Clock class="w-6 h-6 text-sunset" />
+                <div class="space-y-6">
+                    <div class="flex gap-6">
+                        <div class="flex-shrink-0 w-8 h-8 rounded-full bg-night text-white flex items-center justify-center text-sm font-bold">
+                            3
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-night mb-2">Hacia Los Lirios</h4>
+                            <p class="text-night/60">Continúa por la carretera hacia Los Lirios</p>
+                        </div>
                     </div>
-                    <div>
-                        <h3 class="font-semibold text-night mb-1">Tiempo de viaje</h3>
-                        <p class="text-night/70">80 minutos desde el centro de Monterrey</p>
-                        <p class="text-sm text-night/50">Aproximadamente 90 km</p>
-                    </div>
-                </div>
 
-                <div class="flex gap-4">
-                    <div class="flex-shrink-0 w-12 h-12 bg-forest/10 rounded-lg flex items-center justify-center">
-                        <Navigation class="w-6 h-6 text-forest" />
+                    <div class="flex gap-6">
+                        <div class="flex-shrink-0 w-8 h-8 rounded-full bg-night text-white flex items-center justify-center text-sm font-bold">
+                            4
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-night mb-2">Llegada</h4>
+                            <p class="text-night/60">A 6 km de Los Lirios, Ejido Rancho Nuevo</p>
+                        </div>
                     </div>
-                    <div>
-                        <h3 class="font-semibold text-night mb-1">Acceso</h3>
-                        <p class="text-night/70">Camino de concreto hidráulico</p>
-                        <p class="text-sm text-night/50">Accesible para cualquier tipo de vehículo</p>
-                    </div>
-                </div>
-
-                <div class="mt-8 p-6 bg-bone rounded-xl">
-                    <h4 class="font-semibold text-night mb-2">Indicaciones</h4>
-                    <ol class="space-y-2 text-sm text-night/70">
-                        <li>1. Desde Monterrey, toma la carretera a Saltillo</li>
-                        <li>2. Desviación hacia Arteaga (señalizado)</li>
-                        <li>3. Continúa hacia Sierra de Arteaga</li>
-                        <li>4. Sigue las indicaciones hacia Quinta El Cielo</li>
-                    </ol>
                 </div>
             </div>
         </div>

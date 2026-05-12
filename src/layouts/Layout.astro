@@ -1,16 +1,19 @@
 ---
+// Importaciones de estilos globales
 import "../styles/global.css";
 import "../styles/calendar.css";
 import "@fontsource-variable/onest/wght.css";
 
+// Interfaz de props del layout
 interface Props {
     title?: string;
     description?: string;
     noFooter?: boolean;
 }
 
+// Configuración por defecto de SEO
 const {
-    title = "Cabaña Quinta El Cielo - Donde el cielo se toca con las manos | Sierra de Arteaga",
+    title = "Quinta El Cielo - Donde el cielo se toca con las manos | Sierra de Arteaga",
     description = "Alojamiento exclusivo en Sierra de Arteaga a 3,550m de altitud. Capacidad para 15-20 personas con vistas espectaculares al cielo estrellado. A solo 80 minutos de Monterrey.",
     noFooter = false,
 } = Astro.props;
@@ -55,6 +58,26 @@ const {
 
         <!-- Footer -->
         {!noFooter && <slot name="footer" />}
+
+        <!-- Initialize GSAP Animations -->
+        <script>
+            import { initAnimations } from '../scripts/animations';
+
+            // Initialize animations when DOM is ready
+            // Small delay to ensure all content is rendered
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', () => {
+                    setTimeout(() => {
+                        initAnimations();
+                    }, 100);
+                });
+            } else {
+                // DOM already loaded
+                setTimeout(() => {
+                    initAnimations();
+                }, 100);
+            }
+        </script>
     </body>
 </html>
 

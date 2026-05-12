@@ -36,7 +36,7 @@ import { MapPin, Clock, Users } from "@lucide/astro";
         <h1
             class="text-5xl md:text-7xl lg:text-8xl font-bold text-bone mb-6 animate-fade-up"
         >
-            Cabaña <span class="text-sunset">Quinta El Cielo</span>
+            <span class="text-sunset">Quinta El Cielo</span>
         </h1>
 
         <!-- Subtitle -->
@@ -44,7 +44,7 @@ import { MapPin, Clock, Users } from "@lucide/astro";
             class="text-xl md:text-2xl text-bone/90 mb-3 animate-fade-up"
             style="animation-delay: 0.1s;"
         >
-            A 3,550m sobre el nivel del mar
+            A <span data-counter="altitude">3,550</span>m sobre el nivel del mar
         </p>
 
         <!-- Tagline -->
@@ -62,13 +62,16 @@ import { MapPin, Clock, Users } from "@lucide/astro";
         >
             <a
                 href="#reservar"
-                class="px-8 py-4 bg-sunset text-night font-semibold rounded-full hover:bg-sunset-dark transform hover:scale-105 transition-all duration-300 shadow-lg"
+                data-magnetic
+                data-ripple
+                class="px-8 py-4 bg-sunset text-night font-semibold rounded-full hover:bg-sunset-dark shadow-lg"
             >
                 Reservar ahora
             </a>
             <a
                 href="#galeria"
-                class="px-8 py-4 bg-bone/10 backdrop-blur-sm border-2 border-bone text-bone font-semibold rounded-full hover:border-black hover:bg-white hover:text-[#074628] transform hover:scale-105 transition-all duration-300"
+                data-magnetic
+                class="px-8 py-4 bg-bone/10 backdrop-blur-sm border-2 border-bone text-bone font-semibold rounded-full hover:border-black hover:bg-white hover:text-[#074628]"
             >
                 Ver galería
             </a>
@@ -83,13 +86,13 @@ import { MapPin, Clock, Users } from "@lucide/astro";
                 class="flex items-center gap-2 px-4 py-2 bg-bone/10 backdrop-blur-sm rounded-full text-bone text-sm"
             >
                 <Clock class="w-4 h-4" />
-                <span>80 min de Monterrey</span>
+                <span><span data-counter="distance">80</span> de Monterrey</span>
             </div>
             <div
                 class="flex items-center gap-2 px-4 py-2 bg-bone/10 backdrop-blur-sm rounded-full text-bone text-sm"
             >
                 <Users class="w-4 h-4" />
-                <span>15-20 personas</span>
+                <span><span data-counter="capacity-min">15</span>-<span data-counter="capacity-max">20</span> personas</span>
             </div>
         </div>
     </div>

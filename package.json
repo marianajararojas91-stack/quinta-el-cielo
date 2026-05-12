@@ -1,5 +1,5 @@
 {
-  "name": "palapa-el-sabino",
+  "name": "quinta-el-cielo",
   "type": "module",
   "version": "0.0.1",
   "engines": {
@@ -12,10 +12,10 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/db": "^0.20.1",
-    "@astrojs/node": "^10.0.5",
+    "@astrojs/db": "^0.21.1",
+    "@astrojs/node": "^10.1.0",
     "@astrojs/react": "^5.0.4",
-    "@astrojs/vercel": "^10.0.5",
+    "@astrojs/vercel": "^10.0.6",
     "@fontsource-variable/onest": "^5.2.11",
     "@lottiefiles/react-lottie-player": "^3.6.0",
     "@lucide/astro": "^1.8.0",
@@ -23,7 +23,7 @@
     "@radix-ui/react-dropdown-menu": "^2.1.16",
     "@radix-ui/react-tooltip": "^1.2.8",
     "@tailwindcss/vite": "^4.2.4",
-    "astro": "^6.1.8",
+    "astro": "^6.3.1",
     "bcrypt": "^6.0.0",
     "clsx": "^2.1.1",
     "date-fns": "^4.1.0",

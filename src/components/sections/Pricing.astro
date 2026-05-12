@@ -1,6 +1,7 @@
 ---
 import { Check } from "@lucide/astro";
 
+// Definición de los 4 planes de precios
 const plans = [
     {
         name: "Planta Baja",
@@ -39,9 +40,42 @@ const plans = [
         ],
         highlight: true,
     },
+    {
+        name: "Estadía por Día",
+        subtitle: "Grupos Grandes",
+        price: "500",
+        duration: "Por Día",
+        features: [
+            "Mínimo 8 personas",
+            "Acceso a todas las instalaciones",
+            "Cocina equipada completa",
+            "Asador y disco disponibles",
+            "Baños completos",
+            "Ideal para grupos grandes",
+            "Pago por día",
+        ],
+        highlight: false,
+    },
+    {
+        name: "Estadía por Día",
+        subtitle: "Grupos Pequeños",
+        price: "500",
+        duration: "Por Día",
+        features: [
+            "Mínimo 5 personas",
+            "Mínimo 2 días de estadía",
+            "Acceso a todas las instalaciones",
+            "Cocina equipada completa",
+            "Asador y disco disponibles",
+            "Baños completos",
+            "Ideal para escapadas cortas",
+        ],
+        highlight: false,
+    },
 ];
 ---
 
+<!-- Sección de Precios -->
 <section id="precios" class="py-20 md:py-32 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <!-- Header -->
@@ -60,7 +94,7 @@ const plans = [
         </div>
 
         <!-- Pricing Cards -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
             {
                 plans.map((plan) => (
                     <div

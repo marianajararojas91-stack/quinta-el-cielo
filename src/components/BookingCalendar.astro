@@ -1,4 +1,5 @@
 ---
+// Importaciones de iconos Lucide
 import {
     Calendar,
     Users,
@@ -9,20 +10,22 @@ import {
 } from "lucide-astro";
 ---
 
+<!-- Formulario de Reservas -->
 <div class="max-w-4xl mx-auto">
     <div class="bg-white rounded-2xl shadow-xl p-8">
         <h2 class="text-3xl font-bold text-night mb-6">Reserva tu Estadía</h2>
 
         <form id="booking-form" class="space-y-6">
-            <!-- Tipo de Cabaña -->
+            <!-- Selección de Plan -->
             <div>
                 <label
                     class="block text-sm font-semibold text-night mb-3 flex items-center gap-2"
                 >
                     <Home class="w-4 h-4" />
-                    Tipo de Cabaña
+                    Selecciona tu Plan
                 </label>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <!-- Opción 1: Planta Baja -->
                     <label class="relative cursor-pointer group">
                         <input
                             type="radio"
@@ -32,42 +35,42 @@ import {
                             required
                         />
                         <div
-                            class="relative p-6 border-2 border-gray-200 rounded-2xl peer-checked:border-[3px] peer-checked:border-black peer-checked:scale-[1.02] transition-all hover:border-gray-400"
+                            class="relative p-5 border-2 border-gray-200 rounded-2xl peer-checked:border-[3px] peer-checked:border-black peer-checked:scale-[1.02] transition-all hover:border-gray-400 h-full"
                         >
-                            <!-- Check Icon -->
                             <div
-                                class="absolute top-4 right-4 opacity-0 peer-checked:opacity-100 transition-opacity"
+                                class="absolute top-3 right-3 opacity-0 peer-checked:opacity-100 transition-opacity"
                             >
                                 <div
-                                    class="w-7 h-7 rounded-full bg-black flex items-center justify-center shadow-lg"
+                                    class="w-6 h-6 rounded-full bg-black flex items-center justify-center shadow-lg"
                                 >
-                                    <CheckCircle2 class="w-5 h-5 text-white" />
+                                    <CheckCircle2 class="w-4 h-4 text-white" />
                                 </div>
                             </div>
 
-                            <!-- Icon -->
                             <div
-                                class="w-12 h-12 bg-forest/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-forest/20 transition-colors"
+                                class="w-10 h-10 bg-forest/10 rounded-xl flex items-center justify-center mb-3 group-hover:bg-forest/20 transition-colors"
                             >
-                                <Home class="w-6 h-6 text-forest" />
+                                <Home class="w-5 h-5 text-forest" />
                             </div>
 
-                            <h3 class="font-bold text-xl text-night mb-1">
+                            <h3 class="font-bold text-lg text-night mb-1">
                                 Planta Baja
                             </h3>
-                            <p class="text-sm text-night/60 mb-4">
+                            <p class="text-xs text-night/60 mb-3">
                                 Paraíso • Fin de semana
                             </p>
 
                             <div class="flex items-baseline gap-1">
-                                <span class="text-3xl font-bold text-forest"
+                                <span class="text-2xl font-bold text-forest"
                                     >$5,499</span
                                 >
-                                <span class="text-sm text-night/50">MXN</span>
+                                <span class="text-xs text-night/50">MXN</span>
                             </div>
+                            <p class="text-xs text-night/50 mt-1">6-8 personas</p>
                         </div>
                     </label>
 
+                    <!-- Opción 2: Cabaña Completa -->
                     <label class="relative cursor-pointer group">
                         <input
                             type="radio"
@@ -76,56 +79,167 @@ import {
                             class="peer sr-only"
                         />
                         <div
-                            class="relative p-6 border-2 border-gray-200 rounded-2xl peer-checked:border-[3px] peer-checked:border-black peer-checked:scale-[1.02] transition-all hover:border-gray-400"
+                            class="relative p-5 border-2 border-gray-200 rounded-2xl peer-checked:border-[3px] peer-checked:border-black peer-checked:scale-[1.02] transition-all hover:border-gray-400 h-full"
                         >
-                            <!-- Check Icon -->
                             <div
-                                class="absolute top-4 right-4 opacity-0 peer-checked:opacity-100 transition-opacity"
+                                class="absolute top-3 right-3 opacity-0 peer-checked:opacity-100 transition-opacity"
                             >
                                 <div
-                                    class="w-7 h-7 rounded-full bg-black flex items-center justify-center shadow-lg"
+                                    class="w-6 h-6 rounded-full bg-black flex items-center justify-center shadow-lg"
                                 >
-                                    <CheckCircle2 class="w-5 h-5 text-white" />
+                                    <CheckCircle2 class="w-4 h-4 text-white" />
                                 </div>
                             </div>
 
-                            <!-- Icon -->
                             <div
-                                class="w-12 h-12 bg-sunset/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-sunset/20 transition-colors"
+                                class="w-10 h-10 bg-sunset/10 rounded-xl flex items-center justify-center mb-3 group-hover:bg-sunset/20 transition-colors"
                             >
-                                <Building2 class="w-6 h-6 text-sunset" />
+                                <Building2 class="w-5 h-5 text-sunset" />
                             </div>
 
-                            <h3 class="font-bold text-xl text-night mb-1">
+                            <h3 class="font-bold text-lg text-night mb-1">
                                 Cabaña Completa
                             </h3>
-                            <p class="text-sm text-night/60 mb-4">
-                                Todas las habitaciones • Fin de semana
+                            <p class="text-xs text-night/60 mb-3">
+                                Todas • Fin de semana
                             </p>
 
                             <div class="flex items-baseline gap-1">
-                                <span class="text-3xl font-bold text-sunset"
+                                <span class="text-2xl font-bold text-sunset"
                                     >$8,500</span
                                 >
-                                <span class="text-sm text-night/50">MXN</span>
+                                <span class="text-xs text-night/50">MXN</span>
                             </div>
+                            <p class="text-xs text-night/50 mt-1">15-20 personas</p>
+                        </div>
+                    </label>
+
+                    <!-- Opción 3: Por Día - Grupos Grandes -->
+                    <label class="relative cursor-pointer group">
+                        <input
+                            type="radio"
+                            name="tipo"
+                            value="dia-grande"
+                            class="peer sr-only"
+                        />
+                        <div
+                            class="relative p-5 border-2 border-gray-200 rounded-2xl peer-checked:border-[3px] peer-checked:border-black peer-checked:scale-[1.02] transition-all hover:border-gray-400 h-full"
+                        >
+                            <div
+                                class="absolute top-3 right-3 opacity-0 peer-checked:opacity-100 transition-opacity"
+                            >
+                                <div
+                                    class="w-6 h-6 rounded-full bg-black flex items-center justify-center shadow-lg"
+                                >
+                                    <CheckCircle2 class="w-4 h-4 text-white" />
+                                </div>
+                            </div>
+
+                            <div
+                                class="w-10 h-10 bg-forest/10 rounded-xl flex items-center justify-center mb-3 group-hover:bg-forest/20 transition-colors"
+                            >
+                                <Users class="w-5 h-5 text-forest" />
+                            </div>
+
+                            <h3 class="font-bold text-lg text-night mb-1">
+                                Por Día
+                            </h3>
+                            <p class="text-xs text-night/60 mb-3">
+                                Grupos grandes
+                            </p>
+
+                            <div class="flex items-baseline gap-1">
+                                <span class="text-2xl font-bold text-forest"
+                                    >$500</span
+                                >
+                                <span class="text-xs text-night/50">/ día</span>
+                            </div>
+                            <p class="text-xs text-night/50 mt-1">Mín. 8 personas</p>
+                        </div>
+                    </label>
+
+                    <!-- Opción 4: Por Día - Grupos Pequeños -->
+                    <label class="relative cursor-pointer group">
+                        <input
+                            type="radio"
+                            name="tipo"
+                            value="dia-pequeno"
+                            class="peer sr-only"
+                        />
+                        <div
+                            class="relative p-5 border-2 border-gray-200 rounded-2xl peer-checked:border-[3px] peer-checked:border-black peer-checked:scale-[1.02] transition-all hover:border-gray-400 h-full"
+                        >
+                            <div
+                                class="absolute top-3 right-3 opacity-0 peer-checked:opacity-100 transition-opacity"
+                            >
+                                <div
+                                    class="w-6 h-6 rounded-full bg-black flex items-center justify-center shadow-lg"
+                                >
+                                    <CheckCircle2 class="w-4 h-4 text-white" />
+                                </div>
+                            </div>
+
+                            <div
+                                class="w-10 h-10 bg-sunset/10 rounded-xl flex items-center justify-center mb-3 group-hover:bg-sunset/20 transition-colors"
+                            >
+                                <Users class="w-5 h-5 text-sunset" />
+                            </div>
+
+                            <h3 class="font-bold text-lg text-night mb-1">
+                                Por Día
+                            </h3>
+                            <p class="text-xs text-night/60 mb-3">
+                                Grupos pequeños
+                            </p>
+
+                            <div class="flex items-baseline gap-1">
+                                <span class="text-2xl font-bold text-sunset"
+                                    >$500</span
+                                >
+                                <span class="text-xs text-night/50">/ día</span>
+                            </div>
+                            <p class="text-xs text-night/50 mt-1">Mín. 5 personas • 2 días</p>
                         </div>
                     </label>
                 </div>
             </div>
 
-            <!-- Fechas -->
+            <!-- Selección de Fechas -->
             <div>
                 <label class="block text-sm font-semibold text-night mb-3 flex items-center gap-2">
                     <Calendar class="w-4 h-4" />
-                    Selecciona tu Fin de Semana
+                    <span id="date-label">Selecciona tus Fechas</span>
                 </label>
-                <p class="text-sm text-night/60 mb-4">
-                    Solo aceptamos reservas de fin de semana completo (Viernes 4PM a Domingo 2PM)
+                <p id="date-description" class="text-sm text-night/60 mb-4">
+                    Selecciona un plan primero
                 </p>
 
-                <div id="weekend-picker" class="space-y-4">
+                <!-- Selector de fines de semana (planes baja/completa) -->
+                <div id="weekend-picker" class="space-y-4 hidden">
                     <!-- Weekend selector will be rendered here -->
+                </div>
+
+                <!-- Selector de fechas flexibles (planes por día) -->
+                <div id="flexible-picker" class="space-y-4 hidden">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-medium text-night/70 mb-2">Fecha de entrada</label>
+                            <input
+                                type="date"
+                                id="flexStartDate"
+                                class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-black focus:border-black"
+                            />
+                        </div>
+                        <div>
+                            <label class="block text-xs font-medium text-night/70 mb-2">Fecha de salida</label>
+                            <input
+                                type="date"
+                                id="flexEndDate"
+                                class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-black focus:border-black"
+                            />
+                        </div>
+                    </div>
+                    <p class="text-xs text-night/50 mt-2" id="days-count"></p>
                 </div>
 
                 <input type="hidden" id="startDate" name="startDate" required />
@@ -221,6 +335,7 @@ import {
 </div>
 
 <script>
+    // Referencias del DOM
     const form = document.getElementById("booking-form") as HTMLFormElement;
     const submitBtn = document.getElementById(
         "submit-btn",
@@ -240,31 +355,48 @@ import {
     const startDateInput = document.getElementById("startDate") as HTMLInputElement;
     const endDateInput = document.getElementById("endDate") as HTMLInputElement;
     const weekendPicker = document.getElementById("weekend-picker") as HTMLDivElement;
+    const flexiblePicker = document.getElementById("flexible-picker") as HTMLDivElement;
+    const flexStartDateInput = document.getElementById("flexStartDate") as HTMLInputElement;
+    const flexEndDateInput = document.getElementById("flexEndDate") as HTMLInputElement;
+    const daysCountEl = document.getElementById("days-count") as HTMLParagraphElement;
+    const dateLabel = document.getElementById("date-label") as HTMLSpanElement;
+    const dateDescription = document.getElementById("date-description") as HTMLParagraphElement;
 
+    // Variables de estado
     let selectedWeekend: { friday: Date; sunday: Date } | null = null;
     let currentMonth = new Date();
     let occupiedDates: string[] = [];
+    let currentPlanType: string | null = null;
 
-    // Fetch occupied dates
+    // Configurar fecha mínima (hoy)
+    const today = new Date().toISOString().split('T')[0];
+    flexStartDateInput.min = today;
+    flexEndDateInput.min = today;
+
+    // Obtener fechas ocupadas desde la API
     async function fetchOccupiedDates() {
         try {
             const response = await fetch("/api/bookings/available");
             const data = await response.json();
             occupiedDates = data.occupiedDates || [];
-            renderWeekendPicker();
+            if (currentPlanType === 'baja' || currentPlanType === 'completa') {
+                renderWeekendPicker();
+            }
         } catch (error) {
             console.error("Error fetching occupied dates:", error);
-            renderWeekendPicker();
+            if (currentPlanType === 'baja' || currentPlanType === 'completa') {
+                renderWeekendPicker();
+            }
         }
     }
 
-    // Check if date is occupied
+    // Verificar si una fecha está ocupada
     function isDateOccupied(date: Date): boolean {
         const dateStr = date.toISOString().split('T')[0];
         return occupiedDates.includes(dateStr);
     }
 
-    // Get all weekends in a month
+    // Obtener todos los fines de semana del mes
     function getWeekendsInMonth(date: Date): Array<{ friday: Date; sunday: Date; available: boolean }> {
         const year = date.getFullYear();
         const month = date.getMonth();
@@ -296,7 +428,7 @@ import {
         return weekends;
     }
 
-    // Format date
+    // Formatear fecha para mostrar
     function formatDate(date: Date, format: string): string {
         const months = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
         const days = ['Dom', 'Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb'];
@@ -309,7 +441,7 @@ import {
         return `${date.getDate()} de ${months[date.getMonth()]}`;
     }
 
-    // Render weekend picker
+    // Renderizar selector de fines de semana
     function renderWeekendPicker() {
         const weekends = getWeekendsInMonth(currentMonth);
 
@@ -411,27 +543,157 @@ import {
         });
     }
 
-    // Initialize
+    // Alternar entre selectores de fechas según el plan
+    function switchDatePicker(tipo: string) {
+        currentPlanType = tipo;
+
+        // Reset selections
+        selectedWeekend = null;
+        startDateInput.value = '';
+        endDateInput.value = '';
+        flexStartDateInput.value = '';
+        flexEndDateInput.value = '';
+        priceSummary.classList.add("hidden");
+
+        if (tipo === 'baja' || tipo === 'completa') {
+            // Fin de semana
+            dateLabel.textContent = 'Selecciona tu Fin de Semana';
+            dateDescription.textContent = 'Solo aceptamos reservas de fin de semana completo (Viernes 4PM a Domingo 2PM)';
+            weekendPicker.classList.remove('hidden');
+            flexiblePicker.classList.add('hidden');
+            fetchOccupiedDates();
+        } else if (tipo === 'dia-grande' || tipo === 'dia-pequeno') {
+            // Por día
+            dateLabel.textContent = 'Selecciona tus Fechas';
+            dateDescription.textContent = tipo === 'dia-pequeno'
+                ? 'Mínimo 2 días de estadía. Solo viernes, sábados o domingos.'
+                : 'Solo viernes, sábados o domingos.';
+            weekendPicker.classList.add('hidden');
+            flexiblePicker.classList.remove('hidden');
+        }
+    }
+
+    // Validar que sea fin de semana (vie/sáb/dom)
+    function isWeekendDay(day: number): boolean {
+        return day === 5 || day === 6 || day === 0; // Viernes, Sábado, Domingo
+    }
+
+    // Validar fecha individual
+    function validateDateInput(input: HTMLInputElement, isStart: boolean) {
+        if (!input.value) return;
+
+        // Parse date from YYYY-MM-DD format to avoid timezone issues
+        const [year, month, day] = input.value.split('-').map(Number);
+        const selectedDate = new Date(year, month - 1, day);
+        const dayOfWeek = selectedDate.getDay();
+
+        console.log('Fecha seleccionada:', input.value, 'Día de la semana:', dayOfWeek, ['Dom', 'Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb'][dayOfWeek]);
+
+        if (!isWeekendDay(dayOfWeek)) {
+            const dayName = isStart ? "entrada" : "salida";
+            showMessage(`La fecha de ${dayName} debe ser viernes, sábado o domingo`, true);
+            input.value = '';
+            daysCountEl.textContent = '';
+            return;
+        }
+
+        // Si ambas fechas están llenas, calcular días
+        calculateFlexibleDays();
+    }
+
+    // Calcular días y actualizar precio para fechas flexibles
+    function calculateFlexibleDays() {
+        // Solo calcular si ambas fechas están llenas
+        if (!flexStartDateInput.value || !flexEndDateInput.value) {
+            daysCountEl.textContent = '';
+            return;
+        }
+
+        // Parse dates to avoid timezone issues
+        const [startYear, startMonth, startDay] = flexStartDateInput.value.split('-').map(Number);
+        const [endYear, endMonth, endDay] = flexEndDateInput.value.split('-').map(Number);
+        const start = new Date(startYear, startMonth - 1, startDay);
+        const end = new Date(endYear, endMonth - 1, endDay);
+
+        // Validar que la fecha de salida sea posterior a la de entrada
+        if (end <= start) {
+            showMessage("La fecha de salida debe ser posterior a la fecha de entrada", true);
+            daysCountEl.textContent = '';
+            return;
+        }
+
+        // Calcular días INCLUYENDO día de entrada y salida
+        // Ejemplo: Viernes 16 a Domingo 18 = 3 días (Vie, Sáb, Dom)
+        const days = Math.ceil((end.getTime() - start.getTime()) / (1000 * 60 * 60 * 24)) + 1;
+        daysCountEl.textContent = `${days} día${days > 1 ? 's' : ''} de estadía`;
+
+        // Actualizar campos ocultos
+        startDateInput.value = flexStartDateInput.value;
+        endDateInput.value = flexEndDateInput.value;
+
+        // Create fake weekend object for price calculation
+        selectedWeekend = {
+            friday: start,
+            sunday: end
+        };
+
+        updatePrice();
+    }
+
+    // Inicializar carga de fechas ocupadas
     fetchOccupiedDates();
 
-    // Update price when tipo changes
+    // Escuchar cambios en fechas flexibles
+    flexStartDateInput.addEventListener('change', () => validateDateInput(flexStartDateInput, true));
+    flexEndDateInput.addEventListener('change', () => validateDateInput(flexEndDateInput, false));
+
+    // Escuchar cambio de plan
     tipoInputs.forEach((input) => {
-        input.addEventListener("change", updatePrice);
+        input.addEventListener("change", () => {
+            switchDatePicker(input.value);
+            updatePrice();
+        });
     });
 
+    // Actualizar precio según plan y fechas seleccionadas
     function updatePrice() {
         const selectedTipo = document.querySelector(
             'input[name="tipo"]:checked',
         ) as HTMLInputElement;
 
-        if (selectedTipo) {
-            const prices = {
+        if (selectedTipo && selectedWeekend) {
+            const prices: { [key: string]: number } = {
                 baja: 5499,
                 completa: 8500,
+                'dia-grande': 500,
+                'dia-pequeno': 500,
             };
 
-            const price = prices[selectedTipo.value as keyof typeof prices];
-            totalPriceEl.textContent = `$${price.toLocaleString("es-MX")}`;
+            const basePrice = prices[selectedTipo.value];
+            let finalPrice = basePrice;
+            let priceLabel = "Total del Fin de Semana";
+            let priceDescription = "Viernes a Domingo (3 días, 2 noches)";
+
+            // Para opciones por día, calcular según días seleccionados
+            if (selectedTipo.value === 'dia-grande' || selectedTipo.value === 'dia-pequeno') {
+                const startDate = new Date(selectedWeekend.friday);
+                const endDate = new Date(selectedWeekend.sunday);
+                // Calcular días INCLUYENDO el día de entrada y salida
+                const days = Math.ceil((endDate.getTime() - startDate.getTime()) / (1000 * 60 * 60 * 24)) + 1;
+
+                finalPrice = basePrice * days;
+                priceLabel = "Total por Estadía";
+                priceDescription = `${days} día${days > 1 ? 's' : ''}`;
+            }
+
+            totalPriceEl.textContent = `$${finalPrice.toLocaleString("es-MX")}`;
+
+            // Actualizar labels dinámicamente
+            const summaryLabel = document.querySelector('#price-summary p.text-sm') as HTMLParagraphElement;
+            const summaryDescription = document.querySelector('#price-summary p.text-xs') as HTMLParagraphElement;
+
+            if (summaryLabel) summaryLabel.textContent = priceLabel;
+            if (summaryDescription) summaryDescription.textContent = priceDescription;
 
             priceSummary.classList.remove("hidden");
         }
@@ -451,15 +713,40 @@ import {
         e.preventDefault();
         hideMessage();
 
+        const formData = new FormData(form);
+        const tipo = formData.get("tipo") as string;
+        const guests = parseInt(formData.get("guests") as string);
+
+        // Validaciones por tipo de plan
+        if (tipo === 'dia-grande' && guests < 8) {
+            showMessage("Para el plan 'Por Día - Grupos Grandes' se requieren mínimo 8 personas", true);
+            return;
+        }
+
+        if (tipo === 'dia-pequeno' && guests < 5) {
+            showMessage("Para el plan 'Por Día - Grupos Pequeños' se requieren mínimo 5 personas", true);
+            return;
+        }
+
+        if (tipo === 'dia-pequeno' && selectedWeekend) {
+            const startDate = new Date(selectedWeekend.friday);
+            const endDate = new Date(selectedWeekend.sunday);
+            const days = Math.ceil((endDate.getTime() - startDate.getTime()) / (1000 * 60 * 60 * 24));
+
+            if (days < 2) {
+                showMessage("Para el plan 'Por Día - Grupos Pequeños' se requiere mínimo 2 días de estadía", true);
+                return;
+            }
+        }
+
         submitBtn.disabled = true;
         submitBtn.textContent = "Procesando...";
 
-        const formData = new FormData(form);
         const data = {
-            tipo: formData.get("tipo"),
+            tipo: tipo,
             startDate: formData.get("startDate"),
             endDate: formData.get("endDate"),
-            guests: parseInt(formData.get("guests") as string),
+            guests: guests,
             notes: formData.get("notes") || "",
         };
 

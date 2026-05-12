@@ -1,4 +1,5 @@
 ---
+// Importaciones de componentes de la landing page
 import Layout from "../layouts/Layout.astro";
 import Navigation from "../components/Navigation.astro";
 import Hero from "../components/sections/Hero.astro";
@@ -11,9 +12,11 @@ import Location from "../components/sections/Location.astro";
 import Footer from "../components/Footer.astro";
 ---
 
-<Layout title="Cabaña Quinta El Cielo - Donde el cielo se toca con las manos">
+<!-- Landing Page de Quinta El Cielo -->
+<Layout title="Quinta El Cielo - Donde el cielo se toca con las manos">
     <Navigation slot="nav" />
 
+    <!-- Secciones principales -->
     <Hero />
     <Features />
     <Amenities />

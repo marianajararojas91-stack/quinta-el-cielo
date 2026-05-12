@@ -35,13 +35,13 @@ turso auth signup
 turso auth login
 
 # Crear base de datos
-turso db create palapa-el-sabino
+turso db create quinta-el-cielo
 
 # Obtener URL de la base de datos
-turso db show palapa-el-sabino --url
+turso db show quinta-el-cielo --url
 
 # Crear token de autenticación
-turso db tokens create palapa-el-sabino
+turso db tokens create quinta-el-cielo
 ```
 
 ### 2. Configurar Variables de Entorno en Vercel
@@ -113,16 +113,16 @@ Después del deployment, verifica que:
 
 ```bash
 # Ver estado de la base de datos
-turso db show palapa-el-sabino
+turso db show quinta-el-cielo
 
 # Ejecutar SQL directo
 npx astro db shell --query "SELECT * FROM Users" --remote
 
 # Ver logs de Turso
-turso db inspect palapa-el-sabino
+turso db inspect quinta-el-cielo
 
 # Crear backup manual
-turso db backup palapa-el-sabino
+turso db backup quinta-el-cielo
 ```
 
 ## 🐛 Troubleshooting
@@ -136,4 +136,4 @@ turso db backup palapa-el-sabino
 
 ### Error de conexión en producción
 - Verifica que el token de Turso sea válido
-- Crea un nuevo token con `turso db tokens create palapa-el-sabino`
+- Crea un nuevo token con `turso db tokens create quinta-el-cielo`
